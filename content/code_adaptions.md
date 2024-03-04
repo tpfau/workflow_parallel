@@ -47,25 +47,17 @@ save(res)
 ## Exercise
 
 ````{exercise} Parallel-1: Make the script accept an input index
-We will be working with a an example of a company that sells in
-several markets. More precisely, they want to sell their products in several coutries.
-They are quite specialised and their target audience are smaller businesses that are located
-all over the countries they want to sell in. They have one representative per country and thus
-that representative will have to visit many cities (a classical traveling salesman problem).
-They want to optimise the travel time for these representatives and have a program to do so
-for all of their representatives.
-
-The code does use the `python_tsp` library as well as `numpy`, `scipy` and `pandas`.
-We provide a conda environment file that will create an environment for you that can run this
-For simplicity, we will just use the distances between the places instead of actual routes.
-The locations of the cities that need to be visited along with their countries is provided
-in {download}`cities.csv <code/cities.csv>`.
-The code itself is provided {download}`here </code/python/traveling_salesman.py>`:
-```{literalinclude} code/python/traveling_salesman.py
+Our example is a very simple code which extracts cities for a country from a list of
+cities with their countries and writes a list of these cities.
+The data for the cities for this example are provided in the {download}`cities.csv <code/cities.csv>` file.
+The code itself is provided {download}`here </code/python/long_code.py>`:
+```{literalinclude} code/python/long_code.py
     :language: python
 ```
 
-Adapt the code, such that it takes an integer input value for each calculation
+Adapt the code, such that it takes an integer input and generates one country list
+for each integer input. In this instance, the order of execution is not important
+as one list per country will be produced.
 
 ````
 
@@ -74,9 +66,9 @@ The simplest solution is to use `sys.argv` taking in the first argument and conv
 it to an integer. You can also use more elaborate input parsers (see for example
 [this lecture about argument parsing](https://aaltoscicomp.github.io/python-for-scicomp/scripts/#parsing-command-line-arguments-with-argparse))
 
-```{literalinclude} code/python/traveling_salesman_for_index.py
+```{literalinclude} code/python/long_code_for_index.py
     :language: python
-    :emphasize-lines: 5, 28-45
+    :emphasize-lines: 1, 30-37
 ```
 
 ````
