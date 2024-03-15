@@ -44,7 +44,7 @@ for i in 1,2,3...n do:
 save(res)
 ```
 
-## Exercise
+## Exercise 1
 
 ````{exercise} Parallel-1: Make the script accept an input index
 Our example is a very simple code which extracts cities for a country from a list of

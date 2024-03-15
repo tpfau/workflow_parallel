@@ -40,7 +40,6 @@ mechanisms within the language.
    :caption: Reference
 
    exercises
-   quick-reference
 
 
 .. toctree::

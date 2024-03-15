@@ -27,6 +27,8 @@ and can be used to select what to calculate in this job.
 We can use this variable to tell our program which element to use in this job, done in the above example by passing the `$SLURM_ARRAY_TASK_ID` as the parameter argument for the
 program we run.
 
+## Exercise 1
+
 ```{exercise} Parallel-2: Create a slurm script and run it.
 For our example we will need to adapt the above script a bit.
 First, we will need to run it for only four different values, as we only have four different
@@ -38,12 +40,12 @@ Finally, we don't have any argument parsing, but need to provide the input param
 Build the sbatch script that we need to run the code for our 4 countries and run it on your cluster
 ```
 
-````{solution} Solution: Parallel-1
+````{solution} Solution: Parallel-2
 Here is a script that should be able to run on your cluster:
 
 ```slurm
 #!/bin/bash
-#SBATCH --job-name=my_array_job
+#SBATCH --job-name=long_job
 #SBATCH --array=0-3
 #SBATCH --output=output_%A_%a.txt
 #SBATCH --error=error_%A_%a.txt
@@ -56,3 +58,14 @@ python3 long_code.py $SLURM_ARRAY_TASK_ID
 ```
 
 ````
+
+## More complex submission scripts
+
+In many instances it is necessary to use parameters that are not simple integers, as
+provided by `$SLURM_ARRAY_TASK_ID` or use multiple input parameters. To do this, you can
+either adapt your code or generate more complex logic within the batch submission script
+using bash commands. We will not go into the details of bash programming here, but if you
+are familiar this can be a convenient way to achieve more complex input parameters.
+
+In the next section we will show you an alternaive way to do this, which might be more
+convenient as it uses the language you commonly use to achieve the goal.
